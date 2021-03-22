@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: public/img
+public_folder: img
+collections:
+  - name: Charts
+  - slug: {{title}}
+  - fields:
+    - label: "Title"
+      name: "title"
+      widget: "string"
+    - label: "Chart"
+      name: "image"
+      widget: "image"
+    - label: "Alternate description"
+      name: "description"
+      widget: "string"
+      required: false
