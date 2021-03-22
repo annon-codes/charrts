@@ -11,7 +11,7 @@ export default function ChartView({ title, image, description, mdx }: Chart) {
         <Layout title={title} className="p-6 mx-auto container">
             <p className="text-center text-4xl pb-6">{title}</p>
             <div className="w-full md:w-4/5 mx-auto">
-                <img src={image} alt={description} />
+                <img className="mx-auto" src={image} alt={description} />
             </div>
             <article className="p-4 mx-auto prose dark:prose-dark">{content}</article>
         </Layout>
