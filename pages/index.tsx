@@ -26,7 +26,7 @@ export default function Home({ charts }: Props) {
 export async function getStaticProps(): Promise<{ props: Props; }> {
     return {
         props: {
-            charts: getAllCharts()
+            charts: await getAllCharts()
         }
     };
 }

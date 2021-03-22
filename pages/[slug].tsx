@@ -1,11 +1,7 @@
 import React from 'react'
-import path from "path"
-import fs from "fs"
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import { Chart } from '../interfaces';
-import { getOne } from '../utils/getCharts';
-
-const chartsPath = path.join(process.cwd(), "content", "charts");
+import { getChartFilenames, getOne } from '../utils/getCharts';
 
 export default function ChartView({ title, image, description }: Chart) {
     return (
@@ -18,13 +14,13 @@ export default function ChartView({ title, image, description }: Chart) {
 
 export async function getStaticProps({ params }: GetStaticPropsContext): Promise<{ props: Chart }> {
     return {
-        props: getOne(params?.slug as string)
+        props: await getOne(params?.slug as string)
     }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: fs.readdirSync(chartsPath).map(filename => filename.replace(/\.md/, "")).map(slug => ({
+        paths: (await getChartFilenames()).map(slug => ({
             params: { slug }
         })),
         fallback: false
