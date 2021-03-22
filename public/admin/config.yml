@@ -7,7 +7,7 @@ collections:
   - name: "charts"
     label: "Charts"
     folder: "content/charts"
-    slug: {{slug}}
+    slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Chart Image", name: "image", widget: "image"}
