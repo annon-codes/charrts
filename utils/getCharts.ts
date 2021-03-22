@@ -1,5 +1,6 @@
 import fs from "fs-extra"
 import matter from "gray-matter";
+import renderToString from "next-mdx-remote/render-to-string";
 import path from "path"
 import { Chart } from "../interfaces"
 
@@ -14,7 +15,8 @@ export default async function getAllCharts(): Promise<Chart[]> {
 
 export async function getOne(slug: string): Promise<Chart> {
     await fs.ensureDir(chartsPath)
-    return matter(fs.readFileSync(path.join(chartsPath, slug + ".md"))).data as Chart;
+    const { data, content } = matter(fs.readFileSync(path.join(chartsPath, slug + ".md")));
+    return { ...data, mdx: await renderToString(content) } as Chart;
 }
 
 export async function getChartFilenames(): Promise<string[]> {
