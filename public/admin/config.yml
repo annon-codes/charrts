@@ -6,8 +6,9 @@ public_folder: img
 collections:
   - name: "charts"
     label: "Charts"
-    folder: "content/charts"
+    folder: "./content/charts"
     slug: "{{slug}}"
+    create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Chart Image", name: "image", widget: "image"}
