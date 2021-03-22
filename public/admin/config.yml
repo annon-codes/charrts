@@ -4,16 +4,13 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: Charts
-  - slug: {{title}}
-  - fields:
-    - label: "Title"
-      name: "title"
-      widget: "string"
-    - label: "Chart"
-      name: "image"
-      widget: "image"
-    - label: "Alternate description"
-      name: "description"
-      widget: "string"
-      required: false
+  - name: "charts"
+    label: "Charts"
+    folder: "content/charts"
+    slug: {{slug}}
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Chart Image", name: "image", widget: "image"}
+      - {label: "Alternate description", name: "description", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
