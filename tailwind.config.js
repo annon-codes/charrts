@@ -48,6 +48,10 @@ module.exports = {
                             color: theme('colors.gray.300'),
                         },
 
+                        p: {
+                            color: theme('colors.gray.300'),
+                        },
+
                         code: {
                             color: theme('colors.gray.300'),
                         },
