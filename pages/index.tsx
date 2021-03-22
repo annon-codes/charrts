@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Layout from "../components/Layout";
 import { Chart } from "../interfaces";
 import getAllCharts from "../utils/getCharts";
@@ -14,7 +13,7 @@ export default function Home({ charts }: Props) {
                 {charts.map(({ title, image, description }, idx) => (
                     <div key={idx}>
                         <p className="capitalize w-80 md:w-52 truncate text-2xl">{title}</p>
-                        <Image src={"/" + image} alt={description} layout="responsive" width={480} height={270} />
+                        <img src={image} alt={description} />
                     </div>
                 ))}
             </div>
