@@ -86,35 +86,6 @@ Start numbering with offset:
 57. foo
 58. bar
 
-## Code
-
-Inline `code`
-
-Indented code
-
-```
-// Some comments
-line 1 of code
-line 2 of code
-line 3 of code
-```
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
 ## Tables
 
 | Option | Description                                                               |
@@ -168,14 +139,6 @@ see [how to change output](https://github.com/markdown-it/markdown-it-emoji#chan
 * 19^th^
 * H\~2\~O
 
-### [<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-### [<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-\==Marked text==
-
 ### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
 
 Footnote 1 link[^first].
@@ -187,10 +150,6 @@ Inline footnote^\[Text of inline footnote] definition.
 Duplicated footnote reference[^second].
 
 [^first]: Footnote **can have markup**
-
-```
-and multiple paragraphs.
-```
 
 [^second]: Footnote text.
 
@@ -204,12 +163,6 @@ with lazy continuation.
 Term 2 with *inline markup*
 
 :   Definition 2
-
-```
-    { some code, part of Definition 2 }
-
-Third paragraph of definition 2.
-```
 
 *Compact style:*
 
