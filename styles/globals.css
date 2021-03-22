@@ -4,6 +4,6 @@
 
 @layer base{
     html, body {
-        @apply min-h-screen dark:bg-black dark:text-white
+        @apply min-h-screen dark:bg-gray-800 dark:text-gray-300
     }
 }
