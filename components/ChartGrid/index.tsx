@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { Chart } from '../../interfaces'
 
@@ -11,7 +12,7 @@ export default function ChartGrid({ charts }: Props) {
             {charts.map(({ title, image, description }, idx) => (
                 <a key={idx} href={title.split(" ").join("-")}>
                     <p className="capitalize w-80 md:w-52 truncate text-2xl">{title}</p>
-                    <img src={image} alt={description} />
+                    <Image src={"/" + image} layout="responsive" width={480} height={270} alt={description} />
                 </a>
             ))}
         </div>
