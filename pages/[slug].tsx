@@ -1,7 +1,7 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import { Chart } from '../interfaces';
-import { getChartFilenames, getOne } from '../utils/getCharts';
+import { getChartFilenames, getOne } from '../utils/charts/getCharts';
 import hydrate from 'next-mdx-remote/hydrate';
 import Layout from '../components/Layout';
 

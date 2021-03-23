@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import { Chart } from "../interfaces";
-import getAllCharts from "../utils/getCharts";
+import getAllCharts from "../utils/charts/getCharts";
 import ChartGrid from "../components/ChartGrid";
 
 interface Props {

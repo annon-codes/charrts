@@ -2,7 +2,8 @@ import fs from "fs-extra"
 import matter from "gray-matter";
 import renderToString from "next-mdx-remote/render-to-string";
 import path from "path"
-import { Chart } from "../interfaces"
+import { Chart } from "../../interfaces"
+import cachingCharts from "./cachingCharts";
 
 const chartsPath = path.join(process.cwd(), "content", "charts");
 
@@ -10,7 +11,7 @@ const chartsPath = path.join(process.cwd(), "content", "charts");
 export default async function getAllCharts(): Promise<Chart[]> {
     const filenames = (await getChartFilenames());
     const charts = filenames.map(name => getOne(name));
-    return Promise.all(charts);
+    return cachingCharts(await Promise.all(charts));
 }
 
 export async function getOne(slug: string): Promise<Chart> {

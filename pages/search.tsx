@@ -3,7 +3,7 @@ import React from 'react'
 import ChartGrid from '../components/ChartGrid';
 import Layout from '../components/Layout';
 import { Chart } from '../interfaces';
-import getAllCharts from '../utils/getCharts';
+import getAllCharts from '../utils/charts/getCharts';
 
 interface Props {
     phrase: string
