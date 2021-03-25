@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
-import Image from 'next/image';
 import { Chart } from '../interfaces';
 import { getChartFilenames, getOne } from '../utils/charts/getCharts';
 import hydrate from 'next-mdx-remote/hydrate';
@@ -12,7 +11,7 @@ export default function ChartView({ title, image, description, mdx }: Chart) {
         <Layout title={title} className="p-6 mx-auto container">
             <p className="text-center text-4xl pb-6">{title}</p>
             <div className="w-full md:w-4/5 mx-auto">
-                <Image className="mx-auto" src={"/" + image} layout="responsive" width={1920} height={1080} alt={description} />
+                <img src={image} alt={description} className="mx-auto"/>
             </div>
             <article className="p-4 mx-auto prose dark:prose-dark">{content}</article>
         </Layout>
